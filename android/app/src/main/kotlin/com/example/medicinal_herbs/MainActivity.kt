@@ -1,4 +1,4 @@
-package com.example.medicinal_herbs
+package com.iwonarudzinska.medicinal_herbs
 
 import io.flutter.embedding.android.FlutterActivity
 
