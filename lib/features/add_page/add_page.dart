@@ -50,7 +50,7 @@ class _AddPageState extends State<AddPage> {
                       color: const Color.fromARGB(255, 30, 176, 59),
                       child: TextField(
                         decoration: const InputDecoration(
-                          hintText: 'Paste the link to the photos',
+                          hintText: 'Paste the link to the photo',
                           border: OutlineInputBorder(),
                         ),
                         onChanged: (newValue) {
