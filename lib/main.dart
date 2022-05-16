@@ -24,7 +24,15 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const Scaffold(),
+      home: Scaffold(
+        body: Center(
+          child: Column(
+            children: const [
+              Text('Witamy'),
+            ],
+          ),
+        ),
+      ),
     );
   }
 }
