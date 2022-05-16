@@ -15,7 +15,7 @@ Welcome to the application about Medicinal Herbs!
 
 Home Page:
 
-<img src="assets/screenshots/screenshot2.png" width=200>    <img src="assets/screenshots/screenshot1.png" width=200>    
+<img src="assets/screenshots/screenshot2.png" width=200>    <img src="assets/screenshots/screenshot13.png" width=200>  <img src="assets/screenshots/screenshot1.png" width=200>   
 
 Herbal Library:
 
@@ -24,7 +24,7 @@ Herbal Library:
 
 Flashcards:
 
-<img src="assets/screenshots/screenshot6.png" width=200>   <img src="assets/screenshots/screenshot7.png" width=200>   
+<img src="assets/screenshots/screenshot11.png" width=200>   <img src="assets/screenshots/screenshot7.png" width=200>  <img src="assets/screenshots/screenshot12.png" width=200> 
 
 Quiz:
 
