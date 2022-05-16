@@ -10,7 +10,8 @@ class RootPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('witaj!!'),
+        title: const Text('MEDICINAL HERBS!'),
+        centerTitle: true,
         actions: [
           IconButton(
             onPressed: () => FirebaseAuth.instance.signOut(),
@@ -20,8 +21,13 @@ class RootPage extends StatelessWidget {
       ),
       body: Center(
         child: Column(
-          children: const [
-            Text('Witamy'),
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const Text('Welcome to the application about Medicinal Herbs'),
+            Text(
+              'This app will help you learn medicinal herbs.\n\nYou can add herbs to your library, play flashcards, and take a quiz',
+              style: Theme.of(context).textTheme.titleMedium,
+            ),
           ],
         ),
       ),

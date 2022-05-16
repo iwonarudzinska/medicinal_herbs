@@ -7,6 +7,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
         scaffoldBackgroundColor: const Color.fromARGB(255, 191, 223, 192),
@@ -23,6 +24,13 @@ class MyApp extends StatelessWidget {
           ),
         ),
         primarySwatch: Colors.pink,
+        textTheme: ThemeData.light().textTheme.copyWith(
+              titleMedium: const TextStyle(
+                fontFamily: 'OpenSans',
+                fontWeight: FontWeight.bold,
+                fontSize: 18,
+              ),
+            ),
       ),
       home: const AuthGate(),
     );
