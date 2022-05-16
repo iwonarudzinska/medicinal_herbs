@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:medicinal_herbs/features/home_page/home_page.dart';
 
 class AddPage extends StatefulWidget {
   const AddPage({
@@ -110,6 +111,29 @@ class _AddPageState extends State<AddPage> {
                               widget.onSave();
                             },
                       child: const Text('ADD'),
+                    ),
+                    const SizedBox(
+                      height: 90,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        TextButton(
+                          onPressed: () {
+                            Navigator.of(context).pop(
+                              MaterialPageRoute(
+                                builder: (_) => const HomePage(),
+                              ),
+                            );
+                          },
+                          child: const Text(
+                            'Back to Home Page',
+                            style: TextStyle(
+                              color: Colors.amber,
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
                   ],
                 ),
