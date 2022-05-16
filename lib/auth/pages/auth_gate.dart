@@ -1,7 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutterfire_ui/auth.dart';
-import 'package:medicinal_herbs/main.dart';
+import 'package:medicinal_herbs/features/root_page/root_page.dart';
+
 
 class AuthGate extends StatelessWidget {
   const AuthGate({Key? key}) : super(key: key);
@@ -49,7 +50,7 @@ class AuthGate extends StatelessWidget {
               ]);
         }
 
-        return const HomePage();
+        return const RootPage();
       },
     );
   }
