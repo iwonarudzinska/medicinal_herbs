@@ -38,7 +38,7 @@ class _YerbamateGridElementState extends State<YerbamateGridElement> {
                     fontSize: 15,
                   )
                 : GoogleFonts.italianno(
-                    fontSize: 50,
+                    fontSize: 48,
                     color: Colors.white,
                   ),
           ),

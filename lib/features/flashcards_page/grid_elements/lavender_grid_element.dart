@@ -38,7 +38,7 @@ class _LavenderGridElementState extends State<LavenderGridElement> {
                     fontSize: 18,
                   )
                 : GoogleFonts.italianno(
-                    fontSize: 40,
+                    fontSize: 39,
                     color: Colors.white,
                   ),
           ),

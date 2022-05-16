@@ -27,9 +27,14 @@ class RootPage extends StatelessWidget {
             const Text('Welcome to the application about Medicinal Herbs'),
             const SizedBox(height: 100),
             Text(
-              'This app will help you learn medicinal herbs.\n\nYou can add herbs to your library, play flashcards, and take a quiz',
+              'This app will help you learn medicinal herbs.\n\nYou can add herbs to your library, play flashcards, and take a quiz.',
               style: Theme.of(context).textTheme.titleMedium,
             ),
+            const SizedBox(
+              height: 20,
+            ),
+            const Text(
+                'Flashcards will teach you the Latin names of herbs.\n\nIn the quiz you will test your knowledge of the properties of herbs.\n\nIn the herbal library you will be able to add photos and descriptions of the herbs of your choice.'),
             const SizedBox(height: 100),
             TextButton(
               onPressed: () {
@@ -37,7 +42,7 @@ class RootPage extends StatelessWidget {
                   MaterialPageRoute(builder: (_) => const HomePage()),
                 );
               },
-              child: const Text('Start'),
+              child: const Text("Lets'go"),
             ),
           ],
         ),
