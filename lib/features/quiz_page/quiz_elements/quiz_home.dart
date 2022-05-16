@@ -16,21 +16,43 @@ class QuizHomePage extends StatefulWidget {
 class _QuizHomePageState extends State<QuizHomePage> {
   final _questions = const [
     {
-      'questionText': 'What\'s your favorite color?',
+      'questionText':
+          "Question 1:\n\nWhat's this species that is added to the dried silage?",
       'answers': [
-        {'text': 'Black', 'score': 10},
-        {'text': 'Red', 'score': 5},
-        {'text': 'Green', 'score': 3},
-        {'text': 'White', 'score': 1}
+        {'text': 'Garlic', 'score': 0},
+        {'text': 'Dill', 'score': 1},
+        {'text': 'Parsley', 'score': 0},
+        {'text': 'Oregano', 'score': 0}
       ]
     },
     {
-      'questionText': 'What\'s your favorite animal?',
+      'questionText':
+          'Question 2:\n\nThis species is commonly used in the form of infusions. It is famous for its sedative properties. It is: ?',
       'answers': [
-        {'text': 'Rabbit', 'score': 3},
-        {'text': 'Snake', 'score': 11},
-        {'text': 'Elephant', 'score': 5},
-        {'text': 'Lion', 'score': 9}
+        {'text': 'Melissa', 'score': 1},
+        {'text': 'Verbena', 'score': 0},
+        {'text': 'Lavender', 'score': 0},
+        {'text': 'Rosemary', 'score': 0}
+      ]
+    },
+    {
+      'questionText':
+          "Question 3:\n\nWhat's this herb that is famous for its high iron and folic acid content?",
+      'answers': [
+        {'text': 'Sorrel', 'score': 0},
+        {'text': 'Spinach', 'score': 0},
+        {'text': 'Parsley', 'score': 1},
+        {'text': 'Fenugreek', 'score': 0}
+      ]
+    },
+    {
+      'questionText':
+          "Question 4:\n\nThis aromatic herb is powerful and should be used in moderation, as it can lead to intoxication if consumed too much. It is: ?",
+      'answers': [
+        {'text': 'Savory', 'score': 0},
+        {'text': 'Lovage', 'score': 0},
+        {'text': 'Sage', 'score': 1},
+        {'text': 'Chive', 'score': 0}
       ]
     },
   ];
@@ -38,10 +60,9 @@ class _QuizHomePageState extends State<QuizHomePage> {
   var _totalScore = 0;
   void _resetQuiz() {
     setState(() {
-          _questionIndex = 0;
-    _totalScore = 0;
+      _questionIndex = 0;
+      _totalScore = 0;
     });
-
   }
 
   void _answerQuestion(int score) {
@@ -58,6 +79,7 @@ class _QuizHomePageState extends State<QuizHomePage> {
       home: Scaffold(
         appBar: AppBar(
           title: const Text('QUIZ'),
+          centerTitle: true,
         ),
         body: _questionIndex < _questions.length
             ? QuizPage(
