@@ -11,3 +11,22 @@ Welcome to the application about Medicinal Herbs!
 ✅In the quiz you will test your knowledge of the properties of herbs.
 
 ✅In the herbal library you will be able to add photos and descriptions of the herbs of your choice.
+
+
+Home Page:
+
+<img src="assets/screenshots/screenshot2.png" width=200>    <img src="assets/screenshots/screenshot1.png" width=200>    
+
+Herbal Library:
+
+<img src="assets/screenshots/screenshot3.png" width=200>    <img src="assets/screenshots/screenshot4.png" width=200>   <img src="assets/screenshots/screenshot5.png" width=200>  
+
+
+Flashcards:
+
+<img src="assets/screenshots/screenshot6.png" width=200>   <img src="assets/screenshots/screenshot7.png" width=200>   
+
+Quiz:
+
+<img src="assets/screenshots/screenshot8.png" width=200>   <img src="assets/screenshots/screenshot9.png" width=200>   <img src="assets/screenshots/screenshot10.png" width=200> 
+ 
