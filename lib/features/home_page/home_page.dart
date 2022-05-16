@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:medicinal_herbs/features/add_page/add_page.dart';
 import 'package:medicinal_herbs/features/flashcards_page/flashcards_page.dart';
 import 'package:medicinal_herbs/features/herbs_page/herbs_page.dart';
-import 'package:medicinal_herbs/features/quiz_page/quiz_page.dart';
+import 'package:medicinal_herbs/features/quiz_page/quiz_elements/quiz_home.dart';
 
 
 class HomePage extends StatefulWidget {
@@ -20,7 +20,7 @@ class _HomePageState extends State<HomePage> {
   var index = 3;
   final screens = [
     const FlashCardsPage(),
-    const QuizPage(),
+    const QuizHomePage(),
     const AddPage(),
     const HerbsPage(),
   ];
