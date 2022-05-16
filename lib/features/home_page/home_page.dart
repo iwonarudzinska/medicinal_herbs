@@ -5,7 +5,6 @@ import 'package:medicinal_herbs/features/flashcards_page/flashcards_page.dart';
 import 'package:medicinal_herbs/features/herbs_page/herbs_page.dart';
 import 'package:medicinal_herbs/features/quiz_page/quiz_elements/quiz_home.dart';
 
-
 class HomePage extends StatefulWidget {
   const HomePage({
     Key? key,
@@ -36,7 +35,6 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       extendBody: true,
       body: screens[index],
-      backgroundColor: Colors.red,
       bottomNavigationBar: Theme(
         data: Theme.of(context).copyWith(
           iconTheme:
@@ -44,8 +42,8 @@ class _HomePageState extends State<HomePage> {
         ),
         child: CurvedNavigationBar(
           key: navigationKey,
-          color: Colors.green,
-          buttonBackgroundColor: Colors.purple,
+          color: const Color.fromARGB(255, 35, 97, 37),
+          buttonBackgroundColor: const Color.fromARGB(255, 39, 96, 176),
           backgroundColor: Colors.transparent,
           height: 60,
           animationCurve: Curves.easeInOut,
