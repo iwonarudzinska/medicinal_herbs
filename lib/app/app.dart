@@ -19,16 +19,17 @@ class MyApp extends StatelessWidget {
         outlinedButtonTheme: OutlinedButtonThemeData(
           style: OutlinedButton.styleFrom(
             minimumSize: const Size.fromHeight(50),
-            backgroundColor: Colors.white,
-            primary: Colors.black,
+            backgroundColor: Colors.teal,
+            primary: Colors.white,
           ),
         ),
-        primarySwatch: Colors.pink,
+        primarySwatch: Colors.teal,
         textTheme: ThemeData.light().textTheme.copyWith(
               titleMedium: const TextStyle(
                 fontFamily: 'OpenSans',
                 fontWeight: FontWeight.bold,
                 fontSize: 18,
+                color: Colors.white,
               ),
             ),
       ),

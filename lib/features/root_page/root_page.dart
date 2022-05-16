@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:firebase_auth/firebase_auth.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:medicinal_herbs/features/home_page/home_page.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class RootPage extends StatelessWidget {
   const RootPage({
@@ -9,42 +10,81 @@ class RootPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('MEDICINAL HERBS!'),
-        centerTitle: true,
-        actions: [
-          IconButton(
-            onPressed: () => FirebaseAuth.instance.signOut(),
-            icon: const Icon(Icons.logout),
+    return SafeArea(
+      child: Scaffold(
+        body: Container(
+          decoration: const BoxDecoration(
+            image: DecorationImage(
+              image: NetworkImage(
+                  'https://www.farmersalmanac.com/wp-content/uploads/2010/10/herbs-table_as460759168.jpeg'),
+              fit: BoxFit.cover,
+              colorFilter: ColorFilter.mode(
+                Colors.black45,
+                BlendMode.darken,
+              ),
+            ),
           ),
-        ],
-      ),
-      body: Center(
-        child: Column(
-          children: [
-            const SizedBox(height: 50),
-            const Text('Welcome to the application about Medicinal Herbs'),
-            const SizedBox(height: 100),
-            Text(
-              'This app will help you learn medicinal herbs.\n\nYou can add herbs to your library, play flashcards, and take a quiz.',
-              style: Theme.of(context).textTheme.titleMedium,
+          child: Center(
+            child: Column(
+              children: [
+                const SizedBox(height: 20),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Container(
+                      color: Colors.amber,
+                      child: IconButton(
+                        onPressed: () => FirebaseAuth.instance.signOut(),
+                        icon: const Icon(
+                          Icons.logout,
+                          color: Colors.green,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                Text(
+                  'Welcome to the application about Medicinal Herbs',
+                  style: GoogleFonts.macondo(
+                    color: Colors.amber,
+                    fontSize: 40,
+                    fontWeight: FontWeight.bold,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+                const SizedBox(height: 30),
+                Text(
+                  '👉This app will help you learn medicinal herbs.\n\n👉You can add herbs to your library, play flashcards, and take a quiz.',
+                  style: Theme.of(context).textTheme.titleMedium,
+                ),
+                const SizedBox(
+                  height: 40,
+                ),
+                Text(
+                  '✅Flashcards will teach you the Latin names of herbs.\n\n✅In the quiz you will test your knowledge of the properties of herbs.\n\n✅In the herbal library you will be able to add photos and descriptions of the herbs of your choice.',
+                  style: Theme.of(context).textTheme.titleMedium,
+                ),
+                const SizedBox(height: 20),
+                TextButton(
+                  onPressed: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (_) => const HomePage(),
+                      ),
+                    );
+                  },
+                  child: const Text(
+                    "Lets'go",
+                    style: TextStyle(
+                      color: Colors.amber,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 25,
+                    ),
+                  ),
+                ),
+              ],
             ),
-            const SizedBox(
-              height: 20,
-            ),
-            const Text(
-                'Flashcards will teach you the Latin names of herbs.\n\nIn the quiz you will test your knowledge of the properties of herbs.\n\nIn the herbal library you will be able to add photos and descriptions of the herbs of your choice.'),
-            const SizedBox(height: 100),
-            TextButton(
-              onPressed: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(builder: (_) => const HomePage()),
-                );
-              },
-              child: const Text("Lets'go"),
-            ),
-          ],
+          ),
         ),
       ),
     );

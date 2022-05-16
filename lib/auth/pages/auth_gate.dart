@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutterfire_ui/auth.dart';
 import 'package:medicinal_herbs/features/root_page/root_page.dart';
 
-
 class AuthGate extends StatelessWidget {
   const AuthGate({Key? key}) : super(key: key);
 
@@ -15,13 +14,18 @@ class AuthGate extends StatelessWidget {
       builder: (context, snapshot) {
         if (!snapshot.hasData) {
           return SignInScreen(
+              // actions: [
+              //   SignedOutAction((context) {
+              //     Navigator.of(context).pop();
+              //   }),
+              // ],
               subtitleBuilder: (context, action) {
                 return Padding(
                   padding: const EdgeInsets.only(bottom: 8),
                   child: Text(
                     action == AuthAction.signIn
-                        ? 'Welcome to FlutterFire UI! Please sign in to continue.'
-                        : 'Welcome to FlutterFire UI! Please create an account to continue',
+                        ? 'Welcome to Medicinal Herbs! Please sign in to continue.'
+                        : 'Welcome to Medicinal Herbs! Please create an account to continue',
                   ),
                 );
               },
@@ -33,7 +37,7 @@ class AuthGate extends StatelessWidget {
                     style: TextStyle(color: Colors.grey),
                   ),
                 );
-              },
+              },  
               headerBuilder: (context, constraints, _) {
                 return Padding(
                   padding: const EdgeInsets.all(20),

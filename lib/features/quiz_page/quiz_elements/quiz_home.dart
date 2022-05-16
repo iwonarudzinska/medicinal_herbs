@@ -78,14 +78,51 @@ class _QuizHomePageState extends State<QuizHomePage> {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: const Text('QUIZ'),
+          flexibleSpace: Container(
+            decoration: const BoxDecoration(
+              gradient: LinearGradient(
+                colors: [
+                  Color.fromARGB(255, 120, 28, 28),
+                  Color.fromARGB(255, 19, 100, 104),
+                  Color.fromARGB(255, 26, 118, 29),
+                ],
+                begin: Alignment.bottomRight,
+                end: Alignment.topLeft,
+              ),
+            ),
+          ),
+          elevation: 0,
+          shape: const RoundedRectangleBorder(
+            borderRadius: BorderRadius.vertical(
+              bottom: Radius.circular(16),
+            ),
+          ),
+          title: const Text(
+            'QUIZ',
+            style: TextStyle(
+              color: Colors.lime,
+            ),
+          ),
           centerTitle: true,
         ),
         body: _questionIndex < _questions.length
-            ? QuizPage(
-                answerQuestion: _answerQuestion,
-                questionIndex: _questionIndex,
-                questions: _questions,
+            ? Container(
+                decoration: const BoxDecoration(
+                  image: DecorationImage(
+                    image: NetworkImage(
+                        'https://5.imimg.com/data5/YV/SX/DK/SELLER-1354677/medicinal-herbs-500x500.jpg'),
+                    fit: BoxFit.cover,
+                    colorFilter: ColorFilter.mode(
+                      Colors.black45,
+                      BlendMode.darken,
+                    ),
+                  ),
+                ),
+                child: QuizPage(
+                  answerQuestion: _answerQuestion,
+                  questionIndex: _questionIndex,
+                  questions: _questions,
+                ),
               )
             : Result(_totalScore, _resetQuiz),
       ),

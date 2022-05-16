@@ -14,6 +14,7 @@ class Question extends StatelessWidget {
         questionText,
         style: const TextStyle(
           fontSize: 28,
+          color: Colors.white,
         ),
         textAlign: TextAlign.center,
       ),
