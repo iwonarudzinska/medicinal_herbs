@@ -2,7 +2,12 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
 class AddPage extends StatefulWidget {
-  const AddPage({Key? key}) : super(key: key);
+  const AddPage({
+    Key? key,
+    required this.onSave,
+  }) : super(key: key);
+
+  final Function onSave;
 
   @override
   State<AddPage> createState() => _AddPageState();
@@ -92,13 +97,18 @@ class _AddPageState extends State<AddPage> {
                       height: 50,
                     ),
                     ElevatedButton(
-                      onPressed: () {
-                        FirebaseFirestore.instance.collection('herbs').add({
-                          'image': image,
-                          'name': name,
-                          'description': description,
-                        });
-                      },
+                      onPressed: name.isEmpty || description.isEmpty
+                          ? null
+                          : () {
+                              FirebaseFirestore.instance
+                                  .collection('herbs')
+                                  .add({
+                                'image': image,
+                                'name': name,
+                                'description': description,
+                              });
+                              widget.onSave();
+                            },
                       child: const Text('ADD'),
                     ),
                   ],
