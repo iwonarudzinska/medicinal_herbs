@@ -74,7 +74,7 @@ class RootPage extends StatelessWidget {
                     );
                   },
                   child: const Text(
-                    "Lets'go",
+                    "Let's go",
                     style: TextStyle(
                       color: Colors.amber,
                       fontWeight: FontWeight.bold,

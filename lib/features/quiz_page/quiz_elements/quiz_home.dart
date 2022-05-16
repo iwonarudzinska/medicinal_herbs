@@ -76,6 +76,7 @@ class _QuizHomePageState extends State<QuizHomePage> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
           flexibleSpace: Container(
