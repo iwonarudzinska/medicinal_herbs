@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:medicinal_herbs/auth/pages/auth_gate.dart';
 import 'firebase_options.dart';
 
 // void main() {
@@ -24,13 +25,24 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: Scaffold(
-        body: Center(
-          child: Column(
-            children: const [
-              Text('Witamy'),
-            ],
-          ),
+      home: const AuthGate(),
+    );
+  }
+}
+
+class HomePage extends StatelessWidget {
+  const HomePage({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+        child: Column(
+          children: const [
+            Text('Witamy'),
+          ],
         ),
       ),
     );
