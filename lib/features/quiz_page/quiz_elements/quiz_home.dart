@@ -113,7 +113,7 @@ class _QuizHomePageState extends State<QuizHomePage> {
                         'https://5.imimg.com/data5/YV/SX/DK/SELLER-1354677/medicinal-herbs-500x500.jpg'),
                     fit: BoxFit.cover,
                     colorFilter: ColorFilter.mode(
-                      Colors.black45,
+                      Colors.black26,
                       BlendMode.darken,
                     ),
                   ),
