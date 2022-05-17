@@ -22,6 +22,18 @@ class HerbsCubit extends Cubit<HerbsState> {
     FirebaseAuth.instance.signOut();
   }
 
+  Future<void> add({
+    required image,
+    required name,
+    required description,
+  }) async {
+    FirebaseFirestore.instance.collection('herbs').add({
+      'image': image,
+      'name': name,
+      'description': description,
+    });
+  }
+
   Future<void> start() async {
     emit(
       HerbsState(

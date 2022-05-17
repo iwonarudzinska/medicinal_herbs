@@ -42,7 +42,6 @@ class RootPage extends StatelessWidget {
                               onPressed: () {
                                 context.read<HerbsCubit>().signOut();
                               },
-                              // } FirebaseAuth.instance.signOut(),
                               icon: const Icon(
                                 Icons.logout,
                                 color: Colors.green,
