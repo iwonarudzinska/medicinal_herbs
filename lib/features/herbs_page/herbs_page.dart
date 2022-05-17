@@ -48,42 +48,64 @@ class HerbsPage extends StatelessWidget {
             return ListView(
               children: [
                 for (final document in documents) ...[
-                  Container(
-                    decoration: BoxDecoration(
-                      gradient: const LinearGradient(
-                        colors: [
-                          Color.fromARGB(255, 120, 28, 28),
-                          Color.fromARGB(255, 19, 100, 104),
-                          Color.fromARGB(255, 26, 118, 29),
+                  Dismissible(
+                    key: ValueKey(document.id),
+                    onDismissed: (_) {
+                      context.read<HerbsCubit>().delete(document: document);
+                      // FirebaseFirestore.instance
+                      //     .collection('herbs')
+                      //     .doc(document.id)
+                      //     .delete();
+                    },
+                    // background: const DecoratedBox(
+                    //   decoration: BoxDecoration(
+                    //     color: Colors.red,
+                    //   ),
+                    //   // child: Align(
+                    //   //   alignment: Alignment.centerRight,
+                    //   //   child: Padding(
+                    //   //     padding: EdgeInsets.only(right: 32.0),
+                    //   //     child: Icon(Icons.delete),
+                    //   //   ),
+                    //   // ),
+                    // ),
+                    child: Container(
+                      decoration: BoxDecoration(
+                        gradient: const LinearGradient(
+                          colors: [
+                            Color.fromARGB(255, 120, 28, 28),
+                            Color.fromARGB(255, 19, 100, 104),
+                            Color.fromARGB(255, 26, 118, 29),
+                          ],
+                          begin: Alignment.bottomRight,
+                          end: Alignment.topLeft,
+                        ),
+                        image: DecorationImage(
+                          image: NetworkImage(
+                            document['image'],
+                          ),
+                          fit: BoxFit.fill,
+                        ),
+                        border: Border.all(
+                          color: Colors.teal,
+                          width: 3,
+                        ),
+                        borderRadius: const BorderRadius.only(
+                          topRight: Radius.circular(15),
+                          bottomLeft: Radius.circular(10),
+                        ),
+                        boxShadow: const [
+                          BoxShadow(
+                            color: Color.fromARGB(255, 120, 28, 28),
+                            offset: Offset(6, 6),
+                            blurRadius: 6,
+                          ),
                         ],
-                        begin: Alignment.bottomRight,
-                        end: Alignment.topLeft,
                       ),
-                      image: DecorationImage(
-                        image: NetworkImage(
-                          document['image'],
-                        ),
-                        fit: BoxFit.fill,
+                      margin: const EdgeInsets.all(20),
+                      child: const Padding(
+                        padding: EdgeInsets.all(70),
                       ),
-                      border: Border.all(
-                        color: Colors.teal,
-                        width: 3,
-                      ),
-                      borderRadius: const BorderRadius.only(
-                        topRight: Radius.circular(15),
-                        bottomLeft: Radius.circular(10),
-                      ),
-                      boxShadow: const [
-                        BoxShadow(
-                          color: Color.fromARGB(255, 120, 28, 28),
-                          offset: Offset(6, 6),
-                          blurRadius: 6,
-                        ),
-                      ],
-                    ),
-                    margin: const EdgeInsets.all(20),
-                    child: const Padding(
-                      padding: EdgeInsets.all(70),
                     ),
                   ),
                   Container(

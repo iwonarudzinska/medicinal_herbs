@@ -45,6 +45,13 @@ class HerbsCubit extends Cubit<HerbsState> {
       });
   }
 
+   Future<void> delete({
+    required document,
+    
+  }) async {
+    FirebaseFirestore.instance.collection('herbs').doc(document.id).delete();
+  }
+
   @override
   Future<void> close() {
     _streamSubscription?.cancel();
