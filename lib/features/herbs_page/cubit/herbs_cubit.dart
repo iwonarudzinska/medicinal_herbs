@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:bloc/bloc.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
@@ -12,4 +14,40 @@ class HerbsCubit extends Cubit<HerbsState> {
             isLoading: false,
           ),
         );
+
+  StreamSubscription? _streamSubscription;
+
+  Future<void> start() async {
+    emit(
+      HerbsState(
+        documents: [],
+        errorMessage: '',
+        isLoading: true,
+      ),
+    );
+
+    _streamSubscription = FirebaseFirestore.instance
+        .collection('herbs')
+        .snapshots()
+        .listen((data) {
+      emit(
+        HerbsState(documents: data.docs, isLoading: false, errorMessage: ''),
+      );
+    })
+      ..onError((error) {
+        emit(
+          HerbsState(
+            documents: [],
+            isLoading: false,
+            errorMessage: error.toString(),
+          ),
+        );
+      });
+  }
+
+  @override
+  Future<void> close() {
+    _streamSubscription?.cancel();
+    return super.close();
+  }
 }
