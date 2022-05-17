@@ -52,23 +52,7 @@ class HerbsPage extends StatelessWidget {
                     key: ValueKey(document.id),
                     onDismissed: (_) {
                       context.read<HerbsCubit>().delete(document: document);
-                      // FirebaseFirestore.instance
-                      //     .collection('herbs')
-                      //     .doc(document.id)
-                      //     .delete();
                     },
-                    // background: const DecoratedBox(
-                    //   decoration: BoxDecoration(
-                    //     color: Colors.red,
-                    //   ),
-                    //   // child: Align(
-                    //   //   alignment: Alignment.centerRight,
-                    //   //   child: Padding(
-                    //   //     padding: EdgeInsets.only(right: 32.0),
-                    //   //     child: Icon(Icons.delete),
-                    //   //   ),
-                    //   // ),
-                    // ),
                     child: Container(
                       decoration: BoxDecoration(
                         gradient: const LinearGradient(

@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:bloc/bloc.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 part 'herbs_state.dart';
 
@@ -16,6 +17,10 @@ class HerbsCubit extends Cubit<HerbsState> {
         );
 
   StreamSubscription? _streamSubscription;
+
+  Future<void> signOut() async {
+    FirebaseAuth.instance.signOut();
+  }
 
   Future<void> start() async {
     emit(
@@ -45,9 +50,8 @@ class HerbsCubit extends Cubit<HerbsState> {
       });
   }
 
-   Future<void> delete({
+  Future<void> delete({
     required document,
-    
   }) async {
     FirebaseFirestore.instance.collection('herbs').doc(document.id).delete();
   }
