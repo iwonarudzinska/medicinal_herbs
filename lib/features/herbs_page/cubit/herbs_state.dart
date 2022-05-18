@@ -1,7 +1,7 @@
 part of 'herbs_cubit.dart';
 
 class HerbsState {
-  List<QueryDocumentSnapshot<Map<String, dynamic>>> documents;
+  List<ItemModel> documents;
   final bool isLoading;
   final String errorMessage;
   

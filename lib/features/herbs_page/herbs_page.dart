@@ -44,14 +44,14 @@ class HerbsPage extends StatelessWidget {
             if (state.isLoading) {
               return const Center(child: CircularProgressIndicator());
             }
-            final documents = state.documents;
+            final itemModels = state.documents;
             return ListView(
               children: [
-                for (final document in documents) ...[
+                for (final itemModel in itemModels) ...[
                   Dismissible(
-                    key: ValueKey(document.id),
+                    key: ValueKey(itemModel.id),
                     onDismissed: (_) {
-                      context.read<HerbsCubit>().delete(document: document);
+                      context.read<HerbsCubit>().delete(document: itemModel);
                     },
                     child: Container(
                       decoration: BoxDecoration(
@@ -66,7 +66,7 @@ class HerbsPage extends StatelessWidget {
                         ),
                         image: DecorationImage(
                           image: NetworkImage(
-                            document['image'],
+                            itemModel.image,
                           ),
                           fit: BoxFit.fill,
                         ),
@@ -104,7 +104,7 @@ class HerbsPage extends StatelessWidget {
                       ),
                     ),
                     child: Text(
-                      document['name'],
+                      itemModel.name,
                       style: const TextStyle(
                         color: Colors.white,
                         fontWeight: FontWeight.bold,
@@ -130,7 +130,7 @@ class HerbsPage extends StatelessWidget {
                     ),
                     child: Expanded(
                       child: Text(
-                        document['description'],
+                        itemModel.description,
                         textAlign: TextAlign.center,
                       ),
                     ),

@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:bloc/bloc.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:medicinal_herbs/models/item_model.dart';
 
 part 'herbs_state.dart';
 
@@ -47,8 +48,15 @@ class HerbsCubit extends Cubit<HerbsState> {
         .collection('herbs')
         .snapshots()
         .listen((data) {
+      final itemModels = data.docs.map((doc) {
+        return ItemModel(
+          id: doc.id,
+            image: doc['image'],
+            name: doc['name'],
+            description: doc['description']);
+      }).toList();
       emit(
-        HerbsState(documents: data.docs, isLoading: false, errorMessage: ''),
+        HerbsState(documents: itemModels, isLoading: false, errorMessage: ''),
       );
     })
       ..onError((error) {
