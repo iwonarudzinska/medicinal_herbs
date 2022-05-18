@@ -1,14 +1,13 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:medicinal_herbs/models/item_model.dart';
+import 'package:medicinal_herbs/repositories/items_repository.dart';
 
 part 'herbs_state.dart';
 
 class HerbsCubit extends Cubit<HerbsState> {
-  HerbsCubit()
+  HerbsCubit(this._itemsRepository)
       : super(
           HerbsState(
             documents: const [],
@@ -16,11 +15,11 @@ class HerbsCubit extends Cubit<HerbsState> {
             isLoading: false,
           ),
         );
-
+  final ItemsRepository _itemsRepository;
   StreamSubscription? _streamSubscription;
 
   Future<void> signOut() async {
-    FirebaseAuth.instance.signOut();
+    _itemsRepository.signOut();
   }
 
   Future<void> add({
@@ -28,11 +27,8 @@ class HerbsCubit extends Cubit<HerbsState> {
     required name,
     required description,
   }) async {
-    FirebaseFirestore.instance.collection('herbs').add({
-      'image': image,
-      'name': name,
-      'description': description,
-    });
+    await _itemsRepository.add(
+        image: image, name: name, description: description);
   }
 
   Future<void> start() async {
@@ -44,19 +40,9 @@ class HerbsCubit extends Cubit<HerbsState> {
       ),
     );
 
-    _streamSubscription = FirebaseFirestore.instance
-        .collection('herbs')
-        .snapshots()
-        .listen((data) {
-      final itemModels = data.docs.map((doc) {
-        return ItemModel(
-          id: doc.id,
-            image: doc['image'],
-            name: doc['name'],
-            description: doc['description']);
-      }).toList();
+    _streamSubscription = _itemsRepository.getItemsStream().listen((data) {
       emit(
-        HerbsState(documents: itemModels, isLoading: false, errorMessage: ''),
+        HerbsState(documents: data, isLoading: false, errorMessage: ''),
       );
     })
       ..onError((error) {
@@ -73,7 +59,7 @@ class HerbsCubit extends Cubit<HerbsState> {
   Future<void> delete({
     required document,
   }) async {
-    FirebaseFirestore.instance.collection('herbs').doc(document.id).delete();
+    await _itemsRepository.delete(id: document);
   }
 
   @override

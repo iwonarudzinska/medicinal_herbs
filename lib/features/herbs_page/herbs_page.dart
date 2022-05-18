@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:medicinal_herbs/features/herbs_page/cubit/herbs_cubit.dart';
+import 'package:medicinal_herbs/repositories/items_repository.dart';
 
 class HerbsPage extends StatelessWidget {
   const HerbsPage({Key? key}) : super(key: key);
@@ -32,7 +33,7 @@ class HerbsPage extends StatelessWidget {
         centerTitle: true,
       ),
       body: BlocProvider(
-        create: (context) => HerbsCubit()..start(),
+        create: (context) => HerbsCubit(ItemsRepository())..start(),
         child: BlocBuilder<HerbsCubit, HerbsState>(
           builder: (context, state) {
             if (state.errorMessage.isNotEmpty) {
