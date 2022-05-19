@@ -1,4 +1,4 @@
-# medicinal_herbs
+# Medicinal Herbs
 
 Welcome to the application about Medicinal Herbs!  
 
@@ -12,6 +12,12 @@ Welcome to the application about Medicinal Herbs!
 
 ✅In the herbal library you will be able to add photos and descriptions of the herbs of your choice.
 
+
+# See the video 👇
+
+![6gpx7q](https://user-images.githubusercontent.com/100914676/169263579-f6c07119-dd3e-4fd5-999b-750c0ea5263b.gif)
+
+# See photos 👇
 
 Home Page:
 
