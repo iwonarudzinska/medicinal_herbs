@@ -4,7 +4,16 @@ import 'package:firebase_auth/firebase_auth.dart';
 
 class ItemsRepository {
   Stream<List<ItemModel>> getItemsStream() {
-    return FirebaseFirestore.instance.collection('herbs').snapshots().map(
+    final userID = FirebaseAuth.instance.currentUser?.uid;
+    if (userID == null) {
+      throw Exception('User is not logged in');
+    }
+    return FirebaseFirestore.instance
+        .collection('users')
+        .doc(userID)
+        .collection('herbs')
+        .snapshots()
+        .map(
       (querySnapshot) {
         return querySnapshot.docs.map(
           (doc) {
@@ -20,7 +29,16 @@ class ItemsRepository {
   }
 
   Future<void> delete({required String id}) {
-    return FirebaseFirestore.instance.collection('herbs').doc(id).delete();
+    final userID = FirebaseAuth.instance.currentUser?.uid;
+    if (userID == null) {
+      throw Exception('User is not logged in');
+    }
+    return FirebaseFirestore.instance
+        .collection('users')
+        .doc(userID)
+        .collection('herbs')
+        .doc(id)
+        .delete();
   }
 
   Future<void> add({
@@ -28,7 +46,15 @@ class ItemsRepository {
     required name,
     required description,
   }) async {
-    await FirebaseFirestore.instance.collection('herbs').add({
+    final userID = FirebaseAuth.instance.currentUser?.uid;
+    if (userID == null) {
+      throw Exception('User is not logged in');
+    }
+    await FirebaseFirestore.instance
+        .collection('users')
+        .doc(userID)
+        .collection('herbs')
+        .add({
       'image': image,
       'name': name,
       'description': description,

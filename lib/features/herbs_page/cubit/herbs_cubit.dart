@@ -57,9 +57,9 @@ class HerbsCubit extends Cubit<HerbsState> {
   }
 
   Future<void> delete({
-    required document,
+    required String documentID,
   }) async {
-    await _itemsRepository.delete(id: document);
+    await _itemsRepository.delete(id: documentID);
   }
 
   @override
