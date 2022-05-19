@@ -4,7 +4,12 @@ import 'package:firebase_auth/firebase_auth.dart';
 
 class ItemsRepository {
   Stream<List<ItemModel>> getItemsStream() {
-    return FirebaseFirestore.instance.collection('herbs').snapshots().map(
+    return FirebaseFirestore.instance
+        .collection('users')
+        .doc('wLql5I6nDZh8FyhWcM3Ujbf6Gbm1')
+        .collection('herbs')
+        .snapshots()
+        .map(
       (querySnapshot) {
         return querySnapshot.docs.map(
           (doc) {
@@ -20,7 +25,12 @@ class ItemsRepository {
   }
 
   Future<void> delete({required String id}) {
-    return FirebaseFirestore.instance.collection('herbs').doc(id).delete();
+    return FirebaseFirestore.instance
+        .collection('users')
+        .doc('wLql5I6nDZh8FyhWcM3Ujbf6Gbm1')
+        .collection('herbs')
+        .doc(id)
+        .delete();
   }
 
   Future<void> add({
@@ -28,7 +38,11 @@ class ItemsRepository {
     required name,
     required description,
   }) async {
-    await FirebaseFirestore.instance.collection('herbs').add({
+    await FirebaseFirestore.instance
+        .collection('users')
+        .doc('wLql5I6nDZh8FyhWcM3Ujbf6Gbm1')
+        .collection('herbs')
+        .add({
       'image': image,
       'name': name,
       'description': description,
