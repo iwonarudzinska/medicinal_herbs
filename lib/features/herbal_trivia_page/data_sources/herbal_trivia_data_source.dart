@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:injectable/injectable.dart';
 import 'package:medicinal_herbs/features/herbal_trivia_page/model/herbal_trivia_model.dart';
 import 'package:retrofit/retrofit.dart';
 
@@ -21,9 +22,11 @@ import 'package:retrofit/retrofit.dart';
 
 part 'herbal_trivia_data_source.g.dart';
 
-@RestApi(baseUrl: "http://my-json-server.typicode.com/iwonarudzinska/herbal_trivia_json")
+@injectable
+@RestApi()
 abstract class HerbalTriviaRemoteRetrofitDataSource {
-  factory HerbalTriviaRemoteRetrofitDataSource(Dio dio, {String baseUrl}) = _HerbalTriviaRemoteRetrofitDataSource;
+  @factoryMethod
+  factory HerbalTriviaRemoteRetrofitDataSource(Dio dio) = _HerbalTriviaRemoteRetrofitDataSource;
 
   @GET("/trivia")
   Future<List<HerbalTriviaModel>> getHerbalTrivia();

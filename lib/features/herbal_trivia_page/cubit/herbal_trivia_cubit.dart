@@ -1,5 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:injectable/injectable.dart';
 import 'package:medicinal_herbs/app/core/enums.dart';
 import 'package:medicinal_herbs/features/herbal_trivia_page/model/herbal_trivia_model.dart';
 import 'package:medicinal_herbs/features/herbal_trivia_page/repositories/herbal_trivia_repository.dart';
@@ -7,6 +8,7 @@ import 'package:medicinal_herbs/features/herbal_trivia_page/repositories/herbal_
 part 'herbal_trivia_state.dart';
 part 'herbal_trivia_cubit.freezed.dart';
 
+@injectable
 class HerbalTriviaCubit extends Cubit<HerbalTriviaState> {
   HerbalTriviaCubit({required this.herbalTriviaRepository})
       : super(HerbalTriviaState());

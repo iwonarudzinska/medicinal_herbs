@@ -10,10 +10,7 @@ part of 'herbal_trivia_data_source.dart';
 
 class _HerbalTriviaRemoteRetrofitDataSource
     implements HerbalTriviaRemoteRetrofitDataSource {
-  _HerbalTriviaRemoteRetrofitDataSource(this._dio, {this.baseUrl}) {
-    baseUrl ??=
-        'http://my-json-server.typicode.com/iwonarudzinska/herbal_trivia_json';
-  }
+  _HerbalTriviaRemoteRetrofitDataSource(this._dio, {this.baseUrl});
 
   final Dio _dio;
 
