@@ -2,6 +2,7 @@ import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:medicinal_herbs/features/add_page/add_page.dart';
 import 'package:medicinal_herbs/features/flashcards_page/flashcards_page.dart';
+import 'package:medicinal_herbs/features/herbal_trivia_page/herbal_trivia_page.dart';
 import 'package:medicinal_herbs/features/herbs_page/herbs_page.dart';
 import 'package:medicinal_herbs/features/quiz_page/quiz_elements/quiz_home.dart';
 
@@ -16,17 +17,19 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   final navigationKey = GlobalKey<CurvedNavigationBarState>();
-  var index = 3;
+  var index = 4;
   final screens = [
     const FlashCardsPage(),
     const QuizHomePage(),
     AddPage(onSave: () {}),
+    const HerbalTriviaPage(),
     const HerbsPage(),
   ];
   final items = [
     const Icon(Icons.dashboard, size: 30),
     const Icon(Icons.quiz, size: 30),
     const Icon(Icons.add, size: 30),
+    const Icon(Icons.psychology, size: 30),
     const Icon(Icons.menu_book, size: 30),
   ];
 
@@ -36,7 +39,7 @@ class _HomePageState extends State<HomePage> {
       if (index == 2) {
         return AddPage(onSave: () {
           setState(() {
-            index = 3;
+            index = 4;
           });
         });
       }
