@@ -17,7 +17,8 @@ Welcome to the application about Medicinal Herbs!
 
 # See the video 👇
 
-![6gpx7q](https://user-images.githubusercontent.com/100914676/169263579-f6c07119-dd3e-4fd5-999b-750c0ea5263b.gif)
+![6i41tf](https://user-images.githubusercontent.com/100914676/171218129-3897f807-1882-4eb6-b24f-321478c586b3.gif)
+
 
 # See photos 👇
 
