@@ -5,8 +5,6 @@ import 'package:medicinal_herbs/app/injection_container.config.dart';
 
 final getIt = GetIt.instance;
 
-
-  
 @InjectableInit()  
 void configureDependencies() => $initGetIt(getIt);
 
@@ -21,11 +19,3 @@ abstract class RegisterModule {
   Dio dio(@Named('BaseUrl') String url) => Dio(BaseOptions(baseUrl: url));  
   
 }
-
-// void configureDependencies() {
-//   getIt.registerFactory(
-//       () => HerbalTriviaCubit(herbalTriviaRepository: getIt()));
-//   getIt
-//       .registerFactory(() => HerbalTriviaRepository(remoteDataSource: getIt()));
-//   getIt.registerFactory(() => HerbalTriviaRemoteRetrofitDataSource(Dio()));
-// }

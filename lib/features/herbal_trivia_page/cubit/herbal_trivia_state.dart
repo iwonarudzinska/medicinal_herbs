@@ -8,16 +8,3 @@ class HerbalTriviaState with _$HerbalTriviaState {
     String? errorMessage,
   }) = _HerbalTriviaState;
 }
-
-
-// class HerbalTriviaState {
-//   HerbalTriviaState({
-//     this.results = const [],
-//     this.status = Status.initial,
-//     this.errorMessage,
-//   });
-
-//   final List<HerbalTriviaModel> results;
-//   final Status status;
-//   final String? errorMessage;
-// }

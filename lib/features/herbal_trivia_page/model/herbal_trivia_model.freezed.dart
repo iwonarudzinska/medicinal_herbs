@@ -120,7 +120,7 @@ class _$_HerbalTriviaModel implements _HerbalTriviaModel {
   _$_HerbalTriviaModel(this.id, this.contents, this.answer);
 
   factory _$_HerbalTriviaModel.fromJson(Map<String, dynamic> json) =>
-      _$$_HerbalTriviaModelFromJson(json);
+      $$HerbalTriviaModelFromJson(json);
 
   @override
   final int id;
@@ -160,7 +160,7 @@ class _$_HerbalTriviaModel implements _HerbalTriviaModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_HerbalTriviaModelToJson(this);
+    return $$HerbalTriviaModelToJson(this);
   }
 }
 
