@@ -22,7 +22,7 @@ class _QuizHomePageState extends State<QuizHomePage> {
         {'text': 'Garlic', 'score': 0},
         {'text': 'Dill', 'score': 1},
         {'text': 'Parsley', 'score': 0},
-        {'text': 'Oregano', 'score': 0}
+        {'text': 'Oregano', ' score': 0}
       ]
     },
     {
