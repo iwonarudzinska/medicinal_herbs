@@ -5,13 +5,9 @@ import 'package:medicinal_herbs/features/herbal_trivia_page/model/herbal_trivia_
 class HerbalTriviaRepository {
   HerbalTriviaRepository({required this.remoteDataSource});
 
-  final HerbalTriviaRemoteDioDataSource remoteDataSource;
+  final HerbalTriviaRemoteRetrofitDataSource remoteDataSource;
 
   Future<List<HerbalTriviaModel>> getHerbalTriviaModels() async {
-    final json = await remoteDataSource.getHerbalTrivia();
-    if (json == null) {
-      return [];
-    }
-    return json.map((item) => HerbalTriviaModel.fromJson(item)).toList();
+    return await remoteDataSource.getHerbalTrivia();
   }
 }
