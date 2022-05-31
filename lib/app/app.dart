@@ -8,7 +8,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
+      title: 'Medicinal Herbs',
       theme: ThemeData(
         scaffoldBackgroundColor: const Color.fromARGB(255, 191, 223, 192),
         inputDecorationTheme: InputDecorationTheme(
