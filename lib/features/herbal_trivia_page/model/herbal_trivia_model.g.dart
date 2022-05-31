@@ -6,14 +6,15 @@ part of 'herbal_trivia_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-HerbalTriviaModel _$HerbalTriviaModelFromJson(Map<String, dynamic> json) =>
-    HerbalTriviaModel(
-      id: json['id'] as int,
-      contents: json['contents'] as String,
-      answer: json['answer'] as String,
+_$_HerbalTriviaModel _$$_HerbalTriviaModelFromJson(Map<String, dynamic> json) =>
+    _$_HerbalTriviaModel(
+      json['id'] as int,
+      json['contents'] as String,
+      json['answer'] as String,
     );
 
-Map<String, dynamic> _$HerbalTriviaModelToJson(HerbalTriviaModel instance) =>
+Map<String, dynamic> _$$_HerbalTriviaModelToJson(
+        _$_HerbalTriviaModel instance) =>
     <String, dynamic>{
       'id': instance.id,
       'contents': instance.contents,
