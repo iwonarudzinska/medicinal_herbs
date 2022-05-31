@@ -1,6 +1,13 @@
 part of 'herbal_trivia_cubit.dart';
 
-@immutable
-abstract class HerbalTriviaState {}
+class HerbalTriviaState {
+  HerbalTriviaState({
+    this.results = const [],
+    this.status = Status.initial,
+    this.errorMessage,
+  });
 
-class HerbalTriviaInitial extends HerbalTriviaState {}
+  final List<HerbalTriviaModel> results;
+  final Status status;
+  final String? errorMessage;
+}
