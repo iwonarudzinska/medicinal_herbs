@@ -4,7 +4,7 @@ import 'package:medicinal_herbs/features/herbal_trivia_page/model/herbal_trivia_
 class HerbalTriviaRepository {
   HerbalTriviaRepository({required this.remoteDataSource});
 
-  final HerbalTriviaMockedDataSource remoteDataSource;
+  final HerbalTriviaRemoteDioDataSource remoteDataSource;
 
   Future<List<HerbalTriviaModel>> getHerbalTriviaModels() async {
     final json = await remoteDataSource.getHerbalTrivia();

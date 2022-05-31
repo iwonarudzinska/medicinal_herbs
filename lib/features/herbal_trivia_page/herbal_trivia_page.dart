@@ -16,7 +16,7 @@ class HerbalTriviaPage extends StatelessWidget {
         create: (context) {
           return HerbalTriviaCubit(
             herbalTriviaRepository: HerbalTriviaRepository(
-              remoteDataSource: HerbalTriviaMockedDataSource(),
+              remoteDataSource: HerbalTriviaRemoteDioDataSource(),
             ),
           )..start();
         },
@@ -32,11 +32,25 @@ class HerbalTriviaPage extends StatelessWidget {
                   child: CircularProgressIndicator(),
                 );
               case Status.success:
-                return ListView(
-                  children: [
-                    for (final trivia in state.results)
-                      _HerbalTriviaItemWidget(model: trivia),
-                  ],
+                return Container(
+                  decoration: const BoxDecoration(
+                    image: DecorationImage(
+                      image: NetworkImage(
+                        'https://envato-shoebox-0.imgix.net/4966/9876-0dcc-4f36-ad5d-6e73c58ceb42/DSC_8556.jpg?auto=compress%2Cformat&fit=max&mark=https%3A%2F%2Felements-assets.envato.com%2Fstatic%2Fwatermark2.png&markalign=center%2Cmiddle&markalpha=18&w=1600&s=1c80a0b9cf5d8d8918133439b38d550f=',
+                      ),
+                      fit: BoxFit.cover,
+                      colorFilter: ColorFilter.mode(
+                        Colors.black26,
+                        BlendMode.darken,
+                      ),
+                    ),
+                  ),
+                  child: ListView(
+                    children: [
+                      for (final trivia in state.results)
+                        _HerbalTriviaItemWidget(model: trivia),
+                    ],
+                  ),
                 );
               case Status.error:
                 return Center(
@@ -71,7 +85,7 @@ class _HerbalTriviaItemWidget extends StatelessWidget {
         ),
         boxShadow: [
           BoxShadow(
-            color: Color.fromARGB(255, 23, 213, 169),
+            color: Colors.teal,
             offset: Offset(6, 6),
             blurRadius: 6,
           ),
@@ -94,14 +108,10 @@ class _HerbalTriviaItemWidget extends StatelessWidget {
             const SizedBox(
               height: 40,
             ),
-            Container(
-              color: Colors.amber,
-              child: Text(
-                model.answer,
-                style: const TextStyle(
-                  color: Color.fromARGB(255, 23, 213, 169),
-                  fontSize: 25,
-                ),
+            Text(
+              model.answer,
+              style: const TextStyle(
+                fontSize: 15,
               ),
             ),
           ],
