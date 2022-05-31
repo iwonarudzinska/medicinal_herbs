@@ -4,13 +4,15 @@ Welcome to the application about Medicinal Herbs!
 
 👉This app will help you learn medicinal herbs.
 
-👉You can add herbs to your library, play flashcards, and take a quiz.
+👉You can add herbs to your library, play flashcards, take a quiz and you will learn interesting facts.
 
 ✅Flashcards will teach you the Latin names of herbs.
 
 ✅In the quiz you will test your knowledge of the properties of herbs.
 
 ✅In the herbal library you will be able to add photos and descriptions of the herbs of your choice.
+
+✅Thanks to herbal trivia everyone will learn a little something.
 
 
 # See the video 👇
@@ -35,4 +37,9 @@ Flashcards:
 Quiz:
 
 <img src="assets/screenshots/screenshot8.png" width=200>   <img src="assets/screenshots/screenshot9.png" width=200>   <img src="assets/screenshots/screenshot10.png" width=200> 
+
+Herbal Trivia:
+
+<img src="assets/screenshots/screenshot14.png" width=200>  <img src="assets/screenshots/screenshot15.png" width=200>
+
  
