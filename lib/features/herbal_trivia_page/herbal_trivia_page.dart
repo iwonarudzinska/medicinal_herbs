@@ -1,11 +1,9 @@
-import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:medicinal_herbs/app/core/enums.dart';
+import 'package:medicinal_herbs/app/injection_container.dart';
 import 'package:medicinal_herbs/features/herbal_trivia_page/cubit/herbal_trivia_cubit.dart';
-import 'package:medicinal_herbs/features/herbal_trivia_page/data_sources/herbal_trivia_data_source.dart';
 import 'package:medicinal_herbs/features/herbal_trivia_page/model/herbal_trivia_model.dart';
-import 'package:medicinal_herbs/features/herbal_trivia_page/repositories/herbal_trivia_repository.dart';
 
 class HerbalTriviaPage extends StatelessWidget {
   const HerbalTriviaPage({Key? key}) : super(key: key);
@@ -15,11 +13,7 @@ class HerbalTriviaPage extends StatelessWidget {
     return Scaffold(
       body: BlocProvider<HerbalTriviaCubit>(
         create: (context) {
-          return HerbalTriviaCubit(
-            herbalTriviaRepository: HerbalTriviaRepository(
-              remoteDataSource: HerbalTriviaRemoteRetrofitDataSource(Dio()),
-            ),
-          )..start();
+          return getIt()..start();
         },
         child: BlocBuilder<HerbalTriviaCubit, HerbalTriviaState>(
           builder: (context, state) {
