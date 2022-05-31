@@ -22,15 +22,15 @@ class _HomePageState extends State<HomePage> {
     const FlashCardsPage(),
     const QuizHomePage(),
     AddPage(onSave: () {}),
-    const HerbsPage(),
     const HerbalTriviaPage(),
+    const HerbsPage(),
   ];
   final items = [
     const Icon(Icons.dashboard, size: 30),
     const Icon(Icons.quiz, size: 30),
     const Icon(Icons.add, size: 30),
-    const Icon(Icons.menu_book, size: 30),
     const Icon(Icons.psychology, size: 30),
+    const Icon(Icons.menu_book, size: 30),
   ];
 
   @override
@@ -39,7 +39,7 @@ class _HomePageState extends State<HomePage> {
       if (index == 2) {
         return AddPage(onSave: () {
           setState(() {
-            index = 3;
+            index = 4;
           });
         });
       }
