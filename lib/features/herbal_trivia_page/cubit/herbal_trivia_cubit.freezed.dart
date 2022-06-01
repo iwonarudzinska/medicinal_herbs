@@ -125,7 +125,7 @@ class _$_HerbalTriviaState implements _HerbalTriviaState {
   @JsonKey()
   List<HerbalTriviaModel> get results {
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_results);
+    return (_results);
   }
 
   @override
