@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:medicinal_herbs/features/herbs_page/cubit/herbs_cubit.dart';
 import 'package:medicinal_herbs/features/home_page/home_page.dart';
-import 'package:medicinal_herbs/repositories/items_repository.dart';
+import 'package:medicinal_herbs/domain/repositories/items_repository.dart';
 
 class AddPage extends StatefulWidget {
   const AddPage({

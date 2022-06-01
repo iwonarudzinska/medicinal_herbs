@@ -1,8 +1,8 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
-import 'package:medicinal_herbs/models/item_model.dart';
-import 'package:medicinal_herbs/repositories/items_repository.dart';
+import 'package:medicinal_herbs/domain/models/item_model.dart';
+import 'package:medicinal_herbs/domain/repositories/items_repository.dart';
 
 part 'herbs_state.dart';
 
