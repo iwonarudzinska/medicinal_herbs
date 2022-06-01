@@ -10,11 +10,13 @@ import 'package:medicinal_herbs/features/flashcards_page/grid_elements/fenugreek
 import 'package:medicinal_herbs/features/flashcards_page/grid_elements/lavender_grid_element.dart';
 import 'package:medicinal_herbs/features/flashcards_page/grid_elements/mint_grid_element.dart';
 import 'package:medicinal_herbs/features/flashcards_page/grid_elements/nettle_grid_element.dart';
+import 'package:medicinal_herbs/features/flashcards_page/grid_elements/oregano_grid_element.dart';
 import 'package:medicinal_herbs/features/flashcards_page/grid_elements/rosemary_grid_element.dart';
 import 'package:medicinal_herbs/features/flashcards_page/grid_elements/sage_grid_element.dart';
 import 'package:medicinal_herbs/features/flashcards_page/grid_elements/thyme_grid_element.dart';
 import 'package:medicinal_herbs/features/flashcards_page/grid_elements/valerian_grid_element.dart';
 import 'package:medicinal_herbs/features/flashcards_page/grid_elements/yerbamate_grid_element.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 void main() {
   runApp(const FlashCardsPage());
@@ -44,10 +46,8 @@ class _FlashCardsPageState extends State<FlashCardsPage> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+      title: 'Medicinal Herbs',
+      theme: ThemeData(),
       home: Scaffold(
         backgroundColor: borderColor.withOpacity(0.5),
         body: Center(
@@ -65,77 +65,77 @@ class _FlashCardsPageState extends State<FlashCardsPage> {
                   children: <Widget>[
                     ChamomileGridElement(
                       onTap: _changeGridBorder,
-                      beforeTap: 'Chamomile',
+                      beforeTap: AppLocalizations.of(context)!.chamomile,
                       afterTap: 'Matricaria chamomilla',
                     ),
                     CorianderGridElement(
                       onTap: _changeGridBorder,
-                      beforeTap: 'Coriander',
+                      beforeTap: AppLocalizations.of(context)!.coriander,
                       afterTap: 'Coriandrum sativum',
                     ),
                     LavenderGridElement(
                       onTap: _changeGridBorder,
-                      beforeTap: 'Lavender',
+                      beforeTap: AppLocalizations.of(context)!.lavender,
                       afterTap: 'Lavandula',
                     ),
                     AlfalfaGridElement(
                       onTap: _changeGridBorder,
-                      beforeTap: 'Alfalfa',
+                      beforeTap: AppLocalizations.of(context)!.alfalfa,
                       afterTap: 'Medicago sativa',
                     ),
                     BasilGridElement(
                       onTap: _changeGridBorder,
-                      beforeTap: 'Basil',
+                      beforeTap: AppLocalizations.of(context)!.basil,
                       afterTap: 'Ocimum',
                     ),
-                    CorianderGridElement(
+                    OreganoGridElement(
                       onTap: _changeGridBorder,
-                      beforeTap: 'Coriander',
-                      afterTap: 'Coriandrum',
+                      beforeTap: AppLocalizations.of(context)!.oregano,
+                      afterTap: 'Origanum vulgare',
                     ),
                     DillGridElement(
                       onTap: _changeGridBorder,
-                      beforeTap: 'Dill',
+                      beforeTap: AppLocalizations.of(context)!.dill,
                       afterTap: 'Anethum',
                     ),
                     FenugreekGridElement(
                       onTap: _changeGridBorder,
-                      beforeTap: 'Fenugreek',
+                      beforeTap: AppLocalizations.of(context)!.fenugreek,
                       afterTap: 'Trigonella',
                     ),
                     MintGridElement(
                       onTap: _changeGridBorder,
-                      beforeTap: 'Mint',
+                      beforeTap: AppLocalizations.of(context)!.mint,
                       afterTap: 'Mentha',
                     ),
                     NettleGridElement(
                       onTap: _changeGridBorder,
-                      beforeTap: 'Nettle',
+                      beforeTap: AppLocalizations.of(context)!.nettle,
                       afterTap: 'Urtica',
                     ),
                     RosemaryGridElement(
                       onTap: _changeGridBorder,
-                      beforeTap: 'Rosemary',
+                      beforeTap: AppLocalizations.of(context)!.rosemary,
                       afterTap: 'Rosmarinus',
                     ),
                     SageGridElement(
                       onTap: _changeGridBorder,
-                      beforeTap: 'Sage',
+                      beforeTap: AppLocalizations.of(context)!.sage,
                       afterTap: 'Salvia',
                     ),
                     ThymeGridElement(
                       onTap: _changeGridBorder,
-                      beforeTap: 'Thyme',
+                      beforeTap: AppLocalizations.of(context)!.thyme,
                       afterTap: 'Thymus vulgaris',
                     ),
                     ValerianGridElement(
                       onTap: _changeGridBorder,
-                      beforeTap: 'Valerian',
+                      beforeTap: AppLocalizations.of(context)!.valerian,
                       afterTap: 'Valeriana officinalis',
                     ),
                     YerbamateGridElement(
                       onTap: _changeGridBorder,
-                      beforeTap: 'Yerba Mate',
+                      beforeTap: AppLocalizations.of(context)!.yerba_mate,
                       afterTap: 'Ilex paraguariensis',
                     ),
                   ],
