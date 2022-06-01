@@ -4,6 +4,7 @@ import 'package:medicinal_herbs/app/core/enums.dart';
 import 'package:medicinal_herbs/app/injection_container.dart';
 import 'package:medicinal_herbs/features/herbal_trivia_page/cubit/herbal_trivia_cubit.dart';
 import 'package:medicinal_herbs/features/herbal_trivia_page/model/herbal_trivia_model.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class HerbalTriviaPage extends StatelessWidget {
   const HerbalTriviaPage({Key? key}) : super(key: key);
@@ -44,9 +45,9 @@ class HerbalTriviaPage extends StatelessWidget {
                     children: [
                       Container(
                         color: const Color.fromARGB(166, 158, 158, 158),
-                        child: const Text(
-                          'Herbs are rich in history and usage. I thought that it would be fun to share some of these unique facts with you in the form of a little herbal trivia. I guarantee that everyone will learn a little something.  Have fun, and I wish you the best of luck! 🙂',
-                          style: TextStyle(
+                        child: Text(
+                          AppLocalizations.of(context)!.trivia,
+                          style: const TextStyle(
                             color: Color.fromARGB(2255, 214, 236, 15),
                             fontSize: 20,
                           ),
@@ -56,9 +57,9 @@ class HerbalTriviaPage extends StatelessWidget {
                       for (final trivia in state.results)
                         _HerbalTriviaItemWidget(model: trivia),
                       const SizedBox(height: 10),
-                      const Text(
-                        'I hope that you enjoyed my herbal trivia  🙂',
-                        style: TextStyle(
+                      Text(
+                        AppLocalizations.of(context)!.trivia_end,
+                        style: const TextStyle(
                           fontSize: 20,
                           fontWeight: FontWeight.bold,
                           color: Color.fromARGB(2255, 214, 236, 15),

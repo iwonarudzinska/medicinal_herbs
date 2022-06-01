@@ -4,6 +4,7 @@ import 'package:medicinal_herbs/domain/remote_data_sources/items_remote_data_sou
 import 'package:medicinal_herbs/features/herbs_page/cubit/herbs_cubit.dart';
 import 'package:medicinal_herbs/features/home_page/home_page.dart';
 import 'package:medicinal_herbs/domain/repositories/items_repository.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class AddPage extends StatefulWidget {
   const AddPage({
@@ -25,7 +26,11 @@ class _AddPageState extends State<AddPage> {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => HerbsCubit(ItemsRepository(ItemsRemoteDataSource(),),),
+      create: (context) => HerbsCubit(
+        ItemsRepository(
+          ItemsRemoteDataSource(),
+        ),
+      ),
       child: BlocBuilder<HerbsCubit, HerbsState>(
         builder: (context, state) {
           return Scaffold(
@@ -56,9 +61,10 @@ class _AddPageState extends State<AddPage> {
                           Container(
                             color: const Color.fromARGB(255, 30, 176, 59),
                             child: TextField(
-                              decoration: const InputDecoration(
-                                hintText: 'Paste the link to the photo',
-                                border: OutlineInputBorder(),
+                              decoration: InputDecoration(
+                                hintText:
+                                    AppLocalizations.of(context)!.link_photo,
+                                border: const OutlineInputBorder(),
                               ),
                               onChanged: (newValue) {
                                 setState(() {
@@ -73,9 +79,9 @@ class _AddPageState extends State<AddPage> {
                           Container(
                             color: const Color.fromARGB(255, 20, 136, 43),
                             child: TextField(
-                              decoration: const InputDecoration(
-                                hintText: 'Give the name of the herb',
-                                border: OutlineInputBorder(),
+                              decoration: InputDecoration(
+                                hintText: AppLocalizations.of(context)!.name,
+                                border: const OutlineInputBorder(),
                               ),
                               onChanged: (newValue) {
                                 setState(() {
@@ -90,9 +96,9 @@ class _AddPageState extends State<AddPage> {
                           Container(
                             color: const Color.fromARGB(255, 14, 94, 30),
                             child: TextField(
-                              decoration: const InputDecoration(
-                                hintText: 'Give a description of the herb',
-                                border: OutlineInputBorder(),
+                              decoration: InputDecoration(
+                                hintText: AppLocalizations.of(context)!.content,
+                                border: const OutlineInputBorder(),
                               ),
                               onChanged: (newValue) {
                                 setState(() {
@@ -113,16 +119,11 @@ class _AddPageState extends State<AddPage> {
                                           name: name,
                                           description: description,
                                         );
-                                    // FirebaseFirestore.instance
-                                    //     .collection('herbs')
-                                    //     .add({
-                                    //   'image': image,
-                                    //   'name': name,
-                                    //   'description': description,
-                                    // });
                                     widget.onSave();
                                   },
-                            child: const Text('ADD'),
+                            child: Text(
+                              AppLocalizations.of(context)!.add,
+                            ),
                           ),
                           const SizedBox(
                             height: 90,
@@ -138,9 +139,9 @@ class _AddPageState extends State<AddPage> {
                                     ),
                                   );
                                 },
-                                child: const Text(
-                                  'Back to Home Page',
-                                  style: TextStyle(
+                                child: Text(
+                                  AppLocalizations.of(context)!.back,
+                                  style: const TextStyle(
                                     color: Colors.amber,
                                   ),
                                 ),

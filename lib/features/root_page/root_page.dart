@@ -5,6 +5,7 @@ import 'package:medicinal_herbs/domain/remote_data_sources/items_remote_data_sou
 import 'package:medicinal_herbs/features/herbs_page/cubit/herbs_cubit.dart';
 import 'package:medicinal_herbs/features/home_page/home_page.dart';
 import 'package:medicinal_herbs/domain/repositories/items_repository.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class RootPage extends StatelessWidget {
   const RootPage({
@@ -15,7 +16,9 @@ class RootPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: BlocProvider(
-        create: (context) => HerbsCubit(ItemsRepository(ItemsRemoteDataSource(),)),
+        create: (context) => HerbsCubit(ItemsRepository(
+          ItemsRemoteDataSource(),
+        )),
         child: BlocBuilder<HerbsCubit, HerbsState>(
           builder: (context, state) {
             return Scaffold(
@@ -32,7 +35,7 @@ class RootPage extends StatelessWidget {
                   ),
                 ),
                 child: Center(
-                  child: Column(
+                  child: ListView(
                     children: [
                       const SizedBox(height: 20),
                       Row(
@@ -53,7 +56,7 @@ class RootPage extends StatelessWidget {
                         ],
                       ),
                       Text(
-                        'Welcome to the application about Medicinal Herbs',
+                        AppLocalizations.of(context)!.welcome,
                         style: GoogleFonts.macondo(
                           color: Colors.amber,
                           fontSize: 40,
@@ -61,16 +64,16 @@ class RootPage extends StatelessWidget {
                         ),
                         textAlign: TextAlign.center,
                       ),
-                      const SizedBox(height: 30),
+                      const SizedBox(height: 20),
                       Text(
-                        '👉This app will help you learn medicinal herbs.\n\n👉You can add herbs to your library, play flashcards, and take a quiz.',
+                        AppLocalizations.of(context)!.about_app,
                         style: Theme.of(context).textTheme.titleMedium,
                       ),
                       const SizedBox(
                         height: 40,
                       ),
                       Text(
-                        '✅Flashcards will teach you the Latin names of herbs.\n\n✅In the quiz you will test your knowledge of the properties of herbs.\n\n✅In the herbal library you will be able to add photos and descriptions of the herbs of your choice.',
+                        AppLocalizations.of(context)!.description,
                         style: Theme.of(context).textTheme.titleMedium,
                       ),
                       const SizedBox(height: 20),
@@ -82,9 +85,9 @@ class RootPage extends StatelessWidget {
                             ),
                           );
                         },
-                        child: const Text(
-                          "Let's go",
-                          style: TextStyle(
+                        child: Text(
+                          AppLocalizations.of(context)!.start,
+                          style: const TextStyle(
                             color: Colors.amber,
                             fontWeight: FontWeight.bold,
                             fontSize: 25,
