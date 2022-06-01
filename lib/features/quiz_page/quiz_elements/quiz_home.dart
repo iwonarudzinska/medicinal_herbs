@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:medicinal_herbs/app/core/config.dart';
 import 'package:medicinal_herbs/features/quiz_page/quiz_elements/result.dart';
 import 'package:medicinal_herbs/features/quiz_page/quiz_page.dart';
 
@@ -98,9 +99,9 @@ class _QuizHomePageState extends State<QuizHomePage> {
               bottom: Radius.circular(16),
             ),
           ),
-          title: const Text(
-            'QUIZ',
-            style: TextStyle(
+          title: Text(
+            Config.title,
+            style: const TextStyle(
               color: Colors.lime,
             ),
           ),

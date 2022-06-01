@@ -9,9 +9,9 @@ class Config {
   static String get title {
     switch (appFlavor) {
       case Flavor.development:
-        return 'Herbs';
+        return 'Take the quiz';
       case Flavor.production:
-        return 'Medicinal Herbs';
+        return 'QUIZ';
     }
   }
 
