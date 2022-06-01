@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:medicinal_herbs/app/core/config.dart';
 import 'package:medicinal_herbs/features/herbs_page/cubit/herbs_cubit.dart';
 import 'package:medicinal_herbs/repositories/items_repository.dart';
 
@@ -29,7 +30,7 @@ class HerbsPage extends StatelessWidget {
             bottom: Radius.circular(16),
           ),
         ),
-        title: const Text('MEDICINAL HERBS'),
+        title: Text(Config.title),
         centerTitle: true,
       ),
       body: BlocProvider(
