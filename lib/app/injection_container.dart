@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
 import 'package:injectable/injectable.dart';
+import 'package:medicinal_herbs/app/core/config.dart';
 import 'package:medicinal_herbs/app/injection_container.config.dart';
 
 final getIt = GetIt.instance;
@@ -12,7 +13,7 @@ void configureDependencies() => $initGetIt(getIt);
 abstract class RegisterModule {  
 
   @Named("BaseUrl")  
-  String get baseUrl => 'http://my-json-server.typicode.com/iwonarudzinska/herbal_trivia_json';  
+  String get baseUrl => Config.baseUrl;  
   
 
   @lazySingleton  

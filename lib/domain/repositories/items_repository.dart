@@ -1,5 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:medicinal_herbs/models/item_model.dart';
+import 'package:medicinal_herbs/domain/models/item_model.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 class ItemsRepository {

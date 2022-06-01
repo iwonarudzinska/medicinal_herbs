@@ -15,7 +15,7 @@ import '../features/herbal_trivia_page/data_sources/herbal_trivia_data_source.da
 import '../features/herbal_trivia_page/repositories/herbal_trivia_repository.dart'
     as _i7;
 import '../features/herbs_page/cubit/herbs_cubit.dart' as _i8;
-import '../repositories/items_repository.dart' as _i4;
+import '../domain/repositories/items_repository.dart' as _i4;
 import 'injection_container.dart'
     as _i10; // ignore_for_file: unnecessary_lambdas
 

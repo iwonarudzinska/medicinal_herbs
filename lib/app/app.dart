@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:medicinal_herbs/app/core/config.dart';
 import 'package:medicinal_herbs/auth/pages/auth_gate.dart';
 
 class MyApp extends StatelessWidget {
@@ -7,7 +8,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
+      debugShowCheckedModeBanner: Config.debugShowCheckedModeBanner,
       title: 'Medicinal Herbs',
       theme: ThemeData(
         scaffoldBackgroundColor: const Color.fromARGB(255, 191, 223, 192),
