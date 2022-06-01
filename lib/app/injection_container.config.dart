@@ -7,6 +7,7 @@
 import 'package:dio/dio.dart' as _i5;
 import 'package:get_it/get_it.dart' as _i1;
 import 'package:injectable/injectable.dart' as _i2;
+import 'package:medicinal_herbs/domain/remote_data_sources/items_remote_data_source.dart';
 
 import '../auth/pages/cubit/auth_cubit.dart' as _i3;
 import '../features/herbal_trivia_page/cubit/herbal_trivia_cubit.dart' as _i9;
@@ -26,7 +27,7 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
   final gh = _i2.GetItHelper(get, environment, environmentFilter);
   final registerModule = _$RegisterModule();
   gh.factory<_i3.AuthCubit>(() => _i3.AuthCubit());
-  gh.factory<_i4.ItemsRepository>(() => _i4.ItemsRepository());
+  gh.factory<_i4.ItemsRepository>(() => _i4.ItemsRepository(ItemsRemoteDataSource(),),);
   gh.factory<String>(() => registerModule.baseUrl, instanceName: 'BaseUrl');
   gh.lazySingleton<_i5.Dio>(
       () => registerModule.dio(get<String>(instanceName: 'BaseUrl')));

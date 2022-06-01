@@ -1,21 +1,20 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:medicinal_herbs/domain/models/item_model.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:medicinal_herbs/domain/remote_data_sources/items_remote_data_source.dart';
 
 class ItemsRepository {
+  ItemsRepository(this._itemsRemoteDataSource);
+
+  final ItemsRemoteDataSource _itemsRemoteDataSource;
+
   Stream<List<ItemModel>> getItemsStream() {
     final userID = FirebaseAuth.instance.currentUser?.uid;
     if (userID == null) {
       throw Exception('User is not logged in');
     }
-    return FirebaseFirestore.instance
-        .collection('users')
-        .doc(userID)
-        .collection('herbs')
-        .snapshots()
-        .map(
+    return _itemsRemoteDataSource.itemsRemoteData().map(
       (querySnapshot) {
-        return querySnapshot.docs.map(
+        return querySnapshot!.docs.map(
           (doc) {
             return ItemModel(
                 id: doc.id,
@@ -33,12 +32,7 @@ class ItemsRepository {
     if (userID == null) {
       throw Exception('User is not logged in');
     }
-    return FirebaseFirestore.instance
-        .collection('users')
-        .doc(userID)
-        .collection('herbs')
-        .doc(id)
-        .delete();
+    return _itemsRemoteDataSource.delete(id: id);
   }
 
   Future<void> add({
@@ -50,18 +44,11 @@ class ItemsRepository {
     if (userID == null) {
       throw Exception('User is not logged in');
     }
-    await FirebaseFirestore.instance
-        .collection('users')
-        .doc(userID)
-        .collection('herbs')
-        .add({
-      'image': image,
-      'name': name,
-      'description': description,
-    });
+    await _itemsRemoteDataSource.add(
+        image: image, name: name, description: description);
   }
 
   Future<void> signOut() {
-    return FirebaseAuth.instance.signOut();
+    return _itemsRemoteDataSource.signOut();
   }
 }

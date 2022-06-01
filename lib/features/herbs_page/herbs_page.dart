@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:medicinal_herbs/app/core/config.dart';
+import 'package:medicinal_herbs/domain/remote_data_sources/items_remote_data_source.dart';
 import 'package:medicinal_herbs/features/herbs_page/cubit/herbs_cubit.dart';
 import 'package:medicinal_herbs/domain/repositories/items_repository.dart';
 
@@ -34,7 +35,7 @@ class HerbsPage extends StatelessWidget {
         centerTitle: true,
       ),
       body: BlocProvider(
-        create: (context) => HerbsCubit(ItemsRepository())..start(),
+        create: (context) => HerbsCubit(ItemsRepository(ItemsRemoteDataSource(),),)..start(),
         child: BlocBuilder<HerbsCubit, HerbsState>(
           builder: (context, state) {
             if (state.errorMessage.isNotEmpty) {
