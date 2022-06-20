@@ -2,9 +2,12 @@
 
 Welcome to the application about Medicinal Herbs!  
 
+
+
 👉This app will help you learn medicinal herbs.
 
 👉You can add herbs to your library, play flashcards, take a quiz and you will learn interesting facts.
+
 
 ✅Flashcards will teach you the Latin names of herbs.
 
