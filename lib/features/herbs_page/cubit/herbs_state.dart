@@ -1,13 +1,10 @@
 part of 'herbs_cubit.dart';
 
-class HerbsState {
-  List<ItemModel> documents;
-  final bool isLoading;
-  final String errorMessage;
-  
-  HerbsState({
-    required this.documents,
-    required this.isLoading,
-    required this.errorMessage,
-  });
+@freezed
+class HerbsState with _$HerbsState {
+  factory HerbsState({
+    @Default([]) List<ItemModel> documents,
+    @Default(false) bool isLoading,
+    String? errorMessage,
+  }) = _HerbsState;
 }

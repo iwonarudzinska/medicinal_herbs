@@ -1,10 +1,12 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:medicinal_herbs/domain/models/item_model.dart';
 import 'package:medicinal_herbs/domain/repositories/items_repository.dart';
 
 part 'herbs_state.dart';
+part 'herbs_cubit.freezed.dart';
 
 class HerbsCubit extends Cubit<HerbsState> {
   HerbsCubit(this._itemsRepository)

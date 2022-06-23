@@ -38,12 +38,11 @@ class HerbsPage extends StatelessWidget {
         create: (context) => HerbsCubit(ItemsRepository(ItemsRemoteDataSource(),),)..start(),
         child: BlocBuilder<HerbsCubit, HerbsState>(
           builder: (context, state) {
-            if (state.errorMessage.isNotEmpty) {
+            if (state.errorMessage!.isNotEmpty) {
               return Center(
                 child: Text('Something went wrong: ${state.errorMessage}'),
               );
             }
-
             if (state.isLoading) {
               return const Center(child: CircularProgressIndicator());
             }
