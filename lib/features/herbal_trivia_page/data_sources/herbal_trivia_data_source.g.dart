@@ -6,8 +6,6 @@ part of 'herbal_trivia_data_source.dart';
 // RetrofitGenerator
 // **************************************************************************
 
-// ignore_for_file: unnecessary_brace_in_string_interps
-
 class _HerbalTriviaRemoteRetrofitDataSource
     implements HerbalTriviaRemoteRetrofitDataSource {
   _HerbalTriviaRemoteRetrofitDataSource(this._dio,);

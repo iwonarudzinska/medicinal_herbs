@@ -56,7 +56,7 @@ class HerbsPage extends StatelessWidget {
                     onDismissed: (_) {
                       context
                           .read<HerbsCubit>()
-                          .delete(documentID: itemModel.id);
+                          .delete(documentID: itemModel.id!);
                     },
                     child: Container(
                       decoration: BoxDecoration(

@@ -1,13 +1,17 @@
-class ItemModel {
-  ItemModel({
-    required this.id,
-    required this.image,
-    required this.name,
-    required this.description,
-  });
+import 'package:freezed_annotation/freezed_annotation.dart';
 
-  final String id;
-  final String image;
-  final String name;
-  final String description;
+part 'item_model.freezed.dart';
+part 'item_model.g.dart';
+
+@freezed
+class ItemModel with _$ItemModel {
+  factory ItemModel(
+    String? id,
+    String image,
+    String name,
+    String description,
+  ) = _ItemModel;
+
+  factory ItemModel.fromJson(Map<String, dynamic> json) =>
+      _$ItemModelFromJson(json);
 }

@@ -1,6 +1,5 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'herbal_trivia_cubit.dart';
@@ -12,7 +11,26 @@ part of 'herbal_trivia_cubit.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
+/// @nodoc
+class _$HerbalTriviaStateTearOff {
+  const _$HerbalTriviaStateTearOff();
+
+  _HerbalTriviaState call(
+      {List<HerbalTriviaModel> results = const [],
+      Status status = Status.initial,
+      String? errorMessage}) {
+    return _HerbalTriviaState(
+      results: results,
+      status: status,
+      errorMessage: errorMessage,
+    );
+  }
+}
+
+/// @nodoc
+const $HerbalTriviaState = _$HerbalTriviaStateTearOff();
 
 /// @nodoc
 mixin _$HerbalTriviaState {
@@ -67,26 +85,26 @@ class _$HerbalTriviaStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$$_HerbalTriviaStateCopyWith<$Res>
+abstract class _$HerbalTriviaStateCopyWith<$Res>
     implements $HerbalTriviaStateCopyWith<$Res> {
-  factory _$$_HerbalTriviaStateCopyWith(_$_HerbalTriviaState value,
-          $Res Function(_$_HerbalTriviaState) then) =
-      __$$_HerbalTriviaStateCopyWithImpl<$Res>;
+  factory _$HerbalTriviaStateCopyWith(
+          _HerbalTriviaState value, $Res Function(_HerbalTriviaState) then) =
+      __$HerbalTriviaStateCopyWithImpl<$Res>;
   @override
   $Res call(
       {List<HerbalTriviaModel> results, Status status, String? errorMessage});
 }
 
 /// @nodoc
-class __$$_HerbalTriviaStateCopyWithImpl<$Res>
+class __$HerbalTriviaStateCopyWithImpl<$Res>
     extends _$HerbalTriviaStateCopyWithImpl<$Res>
-    implements _$$_HerbalTriviaStateCopyWith<$Res> {
-  __$$_HerbalTriviaStateCopyWithImpl(
-      _$_HerbalTriviaState _value, $Res Function(_$_HerbalTriviaState) _then)
-      : super(_value, (v) => _then(v as _$_HerbalTriviaState));
+    implements _$HerbalTriviaStateCopyWith<$Res> {
+  __$HerbalTriviaStateCopyWithImpl(
+      _HerbalTriviaState _value, $Res Function(_HerbalTriviaState) _then)
+      : super(_value, (v) => _then(v as _HerbalTriviaState));
 
   @override
-  _$_HerbalTriviaState get _value => super._value as _$_HerbalTriviaState;
+  _HerbalTriviaState get _value => super._value as _HerbalTriviaState;
 
   @override
   $Res call({
@@ -94,9 +112,9 @@ class __$$_HerbalTriviaStateCopyWithImpl<$Res>
     Object? status = freezed,
     Object? errorMessage = freezed,
   }) {
-    return _then(_$_HerbalTriviaState(
+    return _then(_HerbalTriviaState(
       results: results == freezed
-          ? _value._results
+          ? _value.results
           : results // ignore: cast_nullable_to_non_nullable
               as List<HerbalTriviaModel>,
       status: status == freezed
@@ -115,21 +133,15 @@ class __$$_HerbalTriviaStateCopyWithImpl<$Res>
 
 class _$_HerbalTriviaState implements _HerbalTriviaState {
   _$_HerbalTriviaState(
-      {final List<HerbalTriviaModel> results = const [],
+      {this.results = const [],
       this.status = Status.initial,
-      this.errorMessage})
-      : _results = results;
+      this.errorMessage});
 
-  final List<HerbalTriviaModel> _results;
-  @override
   @JsonKey()
-  List<HerbalTriviaModel> get results {
-    // ignore: implicit_dynamic_type
-    return (_results);
-  }
-
   @override
+  final List<HerbalTriviaModel> results;
   @JsonKey()
+  @override
   final Status status;
   @override
   final String? errorMessage;
@@ -143,8 +155,8 @@ class _$_HerbalTriviaState implements _HerbalTriviaState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_HerbalTriviaState &&
-            const DeepCollectionEquality().equals(other._results, _results) &&
+            other is _HerbalTriviaState &&
+            const DeepCollectionEquality().equals(other.results, results) &&
             const DeepCollectionEquality().equals(other.status, status) &&
             const DeepCollectionEquality()
                 .equals(other.errorMessage, errorMessage));
@@ -153,31 +165,30 @@ class _$_HerbalTriviaState implements _HerbalTriviaState {
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(_results),
+      const DeepCollectionEquality().hash(results),
       const DeepCollectionEquality().hash(status),
       const DeepCollectionEquality().hash(errorMessage));
 
   @JsonKey(ignore: true)
   @override
-  _$$_HerbalTriviaStateCopyWith<_$_HerbalTriviaState> get copyWith =>
-      __$$_HerbalTriviaStateCopyWithImpl<_$_HerbalTriviaState>(
-          this, _$identity);
+  _$HerbalTriviaStateCopyWith<_HerbalTriviaState> get copyWith =>
+      __$HerbalTriviaStateCopyWithImpl<_HerbalTriviaState>(this, _$identity);
 }
 
 abstract class _HerbalTriviaState implements HerbalTriviaState {
   factory _HerbalTriviaState(
-      {final List<HerbalTriviaModel> results,
-      final Status status,
-      final String? errorMessage}) = _$_HerbalTriviaState;
+      {List<HerbalTriviaModel> results,
+      Status status,
+      String? errorMessage}) = _$_HerbalTriviaState;
 
   @override
-  List<HerbalTriviaModel> get results => throw _privateConstructorUsedError;
+  List<HerbalTriviaModel> get results;
   @override
-  Status get status => throw _privateConstructorUsedError;
+  Status get status;
   @override
-  String? get errorMessage => throw _privateConstructorUsedError;
+  String? get errorMessage;
   @override
   @JsonKey(ignore: true)
-  _$$_HerbalTriviaStateCopyWith<_$_HerbalTriviaState> get copyWith =>
+  _$HerbalTriviaStateCopyWith<_HerbalTriviaState> get copyWith =>
       throw _privateConstructorUsedError;
 }
