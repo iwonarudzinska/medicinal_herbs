@@ -1,6 +1,6 @@
 import 'package:medicinal_herbs/domain/models/item_model.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:medicinal_herbs/domain/remote_data_sources/items_remote_data_source.dart';
+import 'package:medicinal_herbs/data/remote_data_sources/items_remote_data_source.dart';
 
 class ItemsRepository {
   ItemsRepository(this._itemsRemoteDataSource);

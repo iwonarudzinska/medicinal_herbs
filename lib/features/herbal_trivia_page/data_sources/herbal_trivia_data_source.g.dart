@@ -10,7 +10,7 @@ part of 'herbal_trivia_data_source.dart';
 
 class _HerbalTriviaRemoteRetrofitDataSource
     implements HerbalTriviaRemoteRetrofitDataSource {
-  _HerbalTriviaRemoteRetrofitDataSource(this._dio, {this.baseUrl});
+  _HerbalTriviaRemoteRetrofitDataSource(this._dio,);
 
   final Dio _dio;
 

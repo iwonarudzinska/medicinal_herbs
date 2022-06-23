@@ -7,7 +7,7 @@
 import 'package:dio/dio.dart' as _i5;
 import 'package:get_it/get_it.dart' as _i1;
 import 'package:injectable/injectable.dart' as _i2;
-import 'package:medicinal_herbs/domain/remote_data_sources/items_remote_data_source.dart';
+import 'package:medicinal_herbs/data/remote_data_sources/items_remote_data_source.dart';
 
 import '../auth/pages/cubit/auth_cubit.dart' as _i3;
 import '../features/herbal_trivia_page/cubit/herbal_trivia_cubit.dart' as _i9;
