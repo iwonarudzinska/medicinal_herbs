@@ -18,9 +18,9 @@ class Config {
   static String get baseUrl {
     switch (appFlavor) {
       case Flavor.development:
-        return 'http://my-json-server.typicode.com/iwonarudzinska/herbal_trivia_2_json';
+        return 'http://my-json-server.typicode.com/iwonaiwonaa/herbal_trivia_2_json';
       case Flavor.production:
-        return 'http://my-json-server.typicode.com/iwonarudzinska/herbal_trivia_json';
+        return 'http://my-json-server.typicode.com/iwonaiwonaa/herbal_trivia_json';
     }
   }
 

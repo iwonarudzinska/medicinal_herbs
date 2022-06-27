@@ -1,10 +1,12 @@
 {
     "version": "0.2.0",
     "configurations": [
+        
         {
             "name": "Launch development",
             "request": "launch",
-            "type": "dart"
+            "type": "dart",
+            "program": "lib/main_development.dart"
         },
         {
             "name": "Launch production",
