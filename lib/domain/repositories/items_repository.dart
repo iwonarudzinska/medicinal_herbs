@@ -1,7 +1,9 @@
+import 'package:injectable/injectable.dart';
 import 'package:medicinal_herbs/domain/models/item_model.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:medicinal_herbs/domain/remote_data_sources/items_remote_data_source.dart';
+import 'package:medicinal_herbs/data/remote_data_sources/items_remote_data_source.dart';
 
+@injectable
 class ItemsRepository {
   ItemsRepository(this._itemsRemoteDataSource);
 
@@ -14,15 +16,9 @@ class ItemsRepository {
     }
     return _itemsRemoteDataSource.itemsRemoteData().map(
       (querySnapshot) {
-        return querySnapshot!.docs.map(
-          (doc) {
-            return ItemModel(
-                id: doc.id,
-                image: doc['image'],
-                name: doc['name'],
-                description: doc['description']);
-          },
-        ).toList();
+        return querySnapshot!.docs
+            .map((doc) => ItemModel.fromJson(doc.data()).copyWith(id: doc.id))
+            .toList();
       },
     );
   }

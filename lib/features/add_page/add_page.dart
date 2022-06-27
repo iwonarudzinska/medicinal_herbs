@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:medicinal_herbs/domain/remote_data_sources/items_remote_data_source.dart';
+import 'package:medicinal_herbs/data/remote_data_sources/items_remote_data_source.dart';
 import 'package:medicinal_herbs/features/herbs_page/cubit/herbs_cubit.dart';
 import 'package:medicinal_herbs/features/home_page/home_page.dart';
 import 'package:medicinal_herbs/domain/repositories/items_repository.dart';
